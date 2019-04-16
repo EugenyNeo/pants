@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Collections;
 import java.util.Map;
 
+//Hello world
 @Controller
 public class RegistrationController {
     @Autowired
