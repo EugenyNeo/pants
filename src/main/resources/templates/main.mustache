@@ -1,7 +1,32 @@
 <html>
-<html>
-
         <body>
-            <div>{{some}}</div>
+            <div>
+                <form action="/logout" method="post">
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/></div>
+                    <input type="submit" value="Sign Out"/>
+                </form>
+            </div>
+
+            <div>
+                    <form method="post">
+                        <input type="text" name="text" placeholder="Enter the message"/>
+                        <input type="text" name="tag" placeholder="Tag"/>
+                        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/></div>
+                        <button type="submit">Add</button>
+                    </form>
+            </div>
+                <div> The List of Msssages</div>
+                    <form method="post" action="filter">
+                        <input type="text" name="filter"/>
+                        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/></div>
+                        <button type="submit">Find</button>
+                    </form>
+                {{#messages}}
+                <div>
+                    <b>{{id}}</b>
+                    <span>{{text}}</span>
+                    <i>{{tag}}</i>
+                </div>
+                {{/messages}}
         </body>
 </html>
